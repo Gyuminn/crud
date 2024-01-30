@@ -6,15 +6,16 @@ import lombok.*;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-public class PostEntity {
+public class PostEntity extends BaseEntity{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(length = 100, nullable = false)
     private String title;
 
-    @Lob
+    @Column(length = 1500, nullable = false)
     private String content;
 
     @Builder
