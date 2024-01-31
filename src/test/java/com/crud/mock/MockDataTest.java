@@ -18,8 +18,8 @@ public class MockDataTest {
     public void insertDummies() {
         IntStream.rangeClosed(1, 300).forEach(i -> {
             PostEntity postEntity = PostEntity.builder()
-                    .title("제목..." + i)
-                    .content("내용..." + i)
+                    .title("제목..............." + i)
+                    .content("내용........................................................................................." + i)
                     .build();
             System.out.println(postRepository.save(postEntity));
         });
