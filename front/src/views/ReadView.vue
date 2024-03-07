@@ -21,6 +21,11 @@ import {useRouter} from "vue-router";
     router.push({name: "edit", params: {postId: props.postId}})
   };
 
+  const moveToDelete = () => {
+    axios.delete(`/api/posts/${props.postId}`)
+    router.go(-1)
+  }
+
   onMounted(() => {
     axios.get(`/api/posts/${props.postId}`)
         .then(response => {
@@ -44,6 +49,7 @@ import {useRouter} from "vue-router";
   </el-row>
 
   <el-button type="warning" @click="moveToEdit()">수정</el-button>
+  <el-button type="warning" @click="moveToDelete()">삭제</el-button>
 </template>
 
 <style scoped lang="scss">

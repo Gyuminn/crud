@@ -13,7 +13,6 @@ public class PostResponse {
     private final String title;
     private final String content;
 
-    // 생성자 오버로딩
     public PostResponse(PostEntity postEntity) {
         this.id = postEntity.getId();
         this.title = postEntity.getTitle();
@@ -23,7 +22,7 @@ public class PostResponse {
     @Builder
     public PostResponse(Long id, String title, String content) {
         this.id = id;
-        this.title = title.substring(0, Math.min(title.length(), 10));
+        this.title = title.substring(0, Math.min(title.length(), 20));
         this.content = content;
     }
 }

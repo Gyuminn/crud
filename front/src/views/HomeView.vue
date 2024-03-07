@@ -8,11 +8,10 @@
   const router = useRouter();
 
     posts.value = [];
-    axios.get(`/api/posts?page=1&size=10&sort=id,desc`)
-        .then(response => {
-          posts.value=response.data;
-        });
-
+      axios.get(`/api/posts?page=1&size=10&sort=id,desc`)
+          .then(response => {
+            posts.value=response.data;
+          });
 
   const page = ref(1);
 

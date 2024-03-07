@@ -60,6 +60,7 @@ public class PostService {
 
     }
 
+    @Transactional
     public void delete(Long id) {
         PostEntity postEntity = postRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 글입니다."));
